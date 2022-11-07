@@ -14,6 +14,8 @@ whoes email id is entered in the starting of the application.
 to sent the mail i have used my dummy email that is free for me so the application
 does not take any cost for using it.
 
+For older version of the Application you can switch to the Anshuman named branch and you can find the 
+files which are present in 06/11/2022.
 
 
 
