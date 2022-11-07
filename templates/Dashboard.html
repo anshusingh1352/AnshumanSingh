@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico'%}">
+  <style>
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    /* set a hover effect for the button*/
+    .btn:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <form method="post" action="">
+    {% csrf_token %}
+    <h1>Hello {{session_email}} Welcome to the Dashboard Click the below button to Logout.</h1>
+    <button type="submit" onclick="handleLogout()" class="btn">Logout</button>
+  </form>
+  <h4>Take Home Assignment
+    <br>User Login with Email & OTP
+  </h4>
+  <h6>
+    Objective
+    Develop an end-to-end user login with Email & OTP system that fulfils the below-described
+    user journey.</h6>
+  <p>
+    Project Requirements<br>
+    This is going to be a simple application meeting following requirements:<br>
+    1. App is login protected. That is, to view its content, users must be logged in.<br>
+    2. If a visiting user is already logged in, they should be presented with the app content.<br>
+    To keep it simple for this project:<br>
+    a. Users are shown their registered email address when logged in.<br>
+    b. Users will be able to logout of the application by pressing a button.<br>
+    3. If a visiting user is not logged in, they must be presented with a login screen. To
+    login into the application:<br>
+    a. User enter their email address and presses “Request OTP” button<br>
+    b. At this point, the application makes a HTTP POST request to the backend<br>
+    c. Backend returns 200 OK if OTP was successfully generated<br>
+    d. Backend returns non-200 status code upon errors<br>
+    e. Backend should not dispatch OTPs over email<br>
+    f. Backend must simply print the generated OTP on backend terminals<br>
+    g. Generated OTPs must be unique and completely random<br>
+    h. Generated OTPs will expire after 30-seconds<br>
+    i. As a user, goto backend terminal and copy the printed OTP code<br>
+    j. Enters the OTP on the web page and presses “Verify OTP” button<br>
+    k. At this point, application makes a HTTP POST request to backend<br>
+    l. If OTP verification fails, let the user re-enter another OTP code for verification<br>
+    m. Add a “Request Another OTP” button which will take the user to step-a<br>
+    n. If OTP verification succeeds, show users their email address<br>
+
+    Your goal is to fulfil some or all the requirements listed above. You must build a user facing<br>
+    application (mobile or web) and a backend API service. See Stack Choice for details.<br>
+    <br>
+    User Journeys<br>
+    Here is what the end user experience will look like:<br>
+    1. User visits your application<br>
+    2. If user is logged in, they are shown their email address<br>
+    3. If user is not logged in, they are taken through the login process:<br>
+    a. Present an Email input form to the user<br>
+    b. User enters their email address and presses “Request OTP” button<br>
+    c. App requests an OTP from backend service<br>
+    d. App presents an OTP input form to the user<br>
+    e. Copy paste OTP from backend terminal and press “Verify OTP” button<br>
+    f. App verified OTP from backend service<br>
+    g. If OTP matches, show user their email address<br>
+    h. If OTP doesn’t match:<br>
+    i. Alert the user about wrong attempt and ask them to retry<br>
+    ii. Let the user “Request another OTP” which takes user back to Step 3a<br>
+
+    Stack Choice<br>
+
+    Mobile Application<br>
+    You can submit your application as a:<br>
+    1. Android application written in Java, Kotlin or Dart Flutter framework<br>
+    2. iOS application written in Objective-C, Swift UI, Dart Flutter framework<br>
+    You should not use React for submissions.<br>
+    Web Application<br>
+    Use one or more of the following programming languages to build frontend components:<br>
+    1. HTML5<br>
+    2. CSS3<br>
+    3. Javascript (ES6)<br>
+    4. Typescript<br>
+    DO NOT use frameworks like<br>
+    a. Angular<br>
+    b. React<br>
+    c. Bootstrap<br>
+    d. jQuery<br>
+    e. ... others ...<br>
+
+    Backend API Service
+    Use one or more of the following programming language to build backend components:<br>
+    1. Python<br>
+    2. NodeJS<br>
+    3. Java<br>
+    4. C/C++<br>
+    5. PHP<br>
+    6. .... Or use your favourite programming language ...<br>
+    You MAY USE frameworks for backend. Example:<br>
+    a. Django (Recommended and preferred)<br>
+    b. Flask<br>
+    c. ExpressJS<br>
+    d. .... Or use your favourite framework ....<br>
+    <br>
+    Deliverables<br>
+    1. Add a README in your project root directory with following information:<br>
+    a. Setup instructions: Reviewers will use these instructions to set up your<br>
+    project locally.<br>
+    b. Dependency management: Your project must use well known packaging tools<br>
+    example:<br>
+    i. pip for Python<br>
+    ii. npm for Javascript, Typescript, NodeJS<br>
+    iii. maven for Java<br>
+    iv. .... Any other well known packaging and dependency management<br>
+    tool can be used ....<br>
+
+    c. How to try?: This will help reviewers to try your project end-to-end. Must<br>
+    include instructions on how to start frontend and backend components.<br>
+    2. Add a .gitignore file to make sure external dependencies like libraries, frameworks,<br>
+    node_module folders, virtual environment folder are NOT shipped.<br>
+    3. Create a public repository on GitHub<br>
+    4. Commit your code in GitHub<br>
+    5. Email your GitHub repository URL to engineering@jaxl.com and add “cc”<br>
+    chitwan.singh@jaxl.com<br>
+    6. Use your full name as your repository name.<br>
+    <br>
+    To clarify any doubts, feel free to email engineering@jaxl.com<br>
+    Deadline<br>
+    Submissions are open till Sunday (6th November, 2022) 12:00 PM IST
+  </p>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.js" 
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+  crossorigin="anonymous"></script>
+<script>
+function handleLogout(){
+  debugger
+  console.log("Inside function")
+  $.ajax({
+    type: 'POST',
+    url: '{% url "logout_fun" %}',
+    data:{csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()},
+    success: function () {
+    }
+  })
+}
+var session_id='{{session_email}}'
+if (!session_id){
+  alert("Please Login First as you are not logged in.");
+}
+
+</script>
